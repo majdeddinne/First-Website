@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cosmic-black: #0A0A12;
+  --matte-charcoal: #1E1E2E;
+  --nebula-teal: #00D1D1;
+  --muted-violet: #7A5BFF;
+  --champagne-gold: #E6C190;
+}
+
+body {
+  @apply bg-cosmic-black text-white m-0 p-0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background: linear-gradient(to right, #374151, #d1d5db, #ffffff); /* Gray-to-white gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Swiper custom styles */
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  background-image: none !important;
+}
+
+/* Swiper button styles */
+.swiper-button-next,
+.swiper-button-prev {
+  background: linear-gradient(135deg, #374151, #d1d5db, #ffffff); /* Gray-to-white gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: linear-gradient(135deg, #4b5563, #e5e7eb, #ffffff); /* Brighter hover effect */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.1); /* Slight zoom effect */
+  opacity: 0.9; /* Slightly reduce opacity for a glowing effect */
+}
+
+/* Swiper pagination bullet styles */
+.swiper-pagination-bullet {
+  background: linear-gradient(135deg, #374151, #d1d5db, #ffffff) !important; /* Gray-to-white gradient */
+  opacity: 0.7;
+  border-radius: 50%; /* Ensure circular bullets */
+  width: 8px; /* Reduced size */
+  height: 8px; /* Reduced size */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+  opacity: 1; /* Full opacity on hover */
+}
+
+.swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, #4b5563, #e5e7eb, #ffffff) !important; /* Brighter gradient for active bullet */
+  opacity: 1;
+  transform: scale(1.4); /* Slightly larger size for active bullet */
+  box-shadow: 0 0 10px 4px rgba(229, 231, 235, 0.6); /* Add a glowing effect */
+}
+
+/* Text Gradient */
+.text-gradient {
+  background: linear-gradient(to right, #374151, #d1d5db, #ffffff); /* Gray-to-white gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Vinyl animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vinyl-spin {
+  animation: spin 2s linear infinite;
+}
+
+/* Luxury button effect */
+.luxury-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.luxury-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--champagne-gold);
+  transition: width 0.3s ease;
+}
+
+.luxury-btn:hover::after {
+  width: 100%;
+}
+
+/* Glass morphism */
+.glass-panel {
+  background: rgba(30, 30, 46, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 193, 144, 0.1);
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cosmic-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-violet);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nebula-teal);
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Particle animation */
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Audio player styles */
+.visualizer-container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: rgba(30, 30, 46, 0.6);
+  border: 1px solid rgba(230, 193, 144, 0.1);
+}
+
+.visualizer-bar {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, var(--nebula-teal), var(--muted-violet));
+  width: 2px;
+  border-radius: 1px;
+  opacity: 0.8;
+  transform-origin: bottom;
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 8px 2px #00fff7, 0 0 16px 4px #00fff7, 0 0 0px 0px #00fff7;
+  }
+  50% {
+    box-shadow: 0 0 24px 8px #00fff7, 0 0 48px 16px #00fff7, 0 0 8px 2px #00fff7;
+  }
+  100% {
+    box-shadow: 0 0 8px 2px #00fff7, 0 0 16px 4px #00fff7, 0 0 0px 0px #00fff7;
+  }
+}
+
+.animate-glow {
+  animation: glow 2.2s ease-in-out infinite;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #a855f7, #ec4899, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group:hover .opacity-0 {
+  opacity: 1;
+}
+
+/* Vinyl Player */
+.vinyl {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.vinyl-inner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #2d2d2d;
+  overflow: hidden;
+}
+
+.album-art {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Play Button */
+.play-button {
+  position: absolute;
+  left: 64px;
+  width: 40px;
+  height: 40px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.play-button:hover {
+  background: #16a34a;
+}
+
+.play-button svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 3s linear infinite;
+}
+
+/* New Gradient Class */
+.text-gradient-gray-white {
+  background: linear-gradient(to right, #374151, #d1d5db, #ffffff); /* Gray-to-white gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

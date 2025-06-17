@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Title Case</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .container { max-width: 400px; margin: auto; }
+    input, button { padding: 10px; font-size: 1rem; }
+    #result { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Text to Title Case Converter</h2>
+    <input type="text" id="inputText" placeholder="Enter your text here" style="width: 100%;">
+    <button onclick="toTitleCase()">Convert to Title Case</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    function toTitleCase() {
+      const text = document.getElementById('inputText').value;
+      const titleCased = text.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+      document.getElementById('result').textContent = titleCased;
+    }
+  </script>
+</body>
+</html>
