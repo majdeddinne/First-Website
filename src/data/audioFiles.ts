@@ -1,1 +1,0 @@
-export const audioFiles = import.meta.glob('/public/audios/*.mp3', { as: 'url' });
